@@ -1,0 +1,9 @@
+admin
+password123
+
+wordctar377
+^i&Eo*(~S&2e7cp
+
+CREATE USER 'wordctar377'@'localhost' IDENTIFIED BY '^i&Eo*(~S&2e7cp';
+GRANT ALL PRIVILEGES ON mysite.* TO 'mysite_user'@'localhost';
+FLUSH PRIVILEGES;

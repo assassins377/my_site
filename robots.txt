@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /uploads/
+
+Allow: /
+
+Sitemap: http://localhost/deepseek/sitemap.xml

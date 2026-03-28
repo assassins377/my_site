@@ -1,0 +1,228 @@
+/* Custom styles for Anime Blog */
+
+/* Hover эффект для карточек */
+.hover-shadow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Анимация звезд рейтинга */
+.rating-star {
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.rating-star:hover {
+    transform: scale(1.2);
+}
+
+.rating-star.active {
+    color: #ffc107;
+}
+
+/* Плавная прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Стили для аватарок */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-lg {
+    width: 80px;
+    height: 80px;
+}
+
+/* Бейджи ролей */
+.badge-role-admin {
+    background-color: #dc3545;
+}
+
+.badge-role-moderator {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.badge-role-author {
+    background-color: #17a2b8;
+}
+
+/* Стили для комментариев */
+.comment-block {
+    border-left: 3px solid #dee2e6;
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+}
+
+.comment-block.own-comment {
+    border-left-color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Индикатор загрузки */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Lazy load placeholder */
+img[loading="lazy"] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Уведомления */
+.alert {
+    border-radius: 0.5rem;
+}
+
+/* Кнопки действий */
+.action-btn {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Постеры аниме */
+.poster-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.poster-container:hover .poster-overlay {
+    opacity: 1;
+}
+
+/* Статусы аниме */
+.status-ongoing {
+    color: #198754;
+}
+
+.status-completed {
+    color: #0d6efd;
+}
+
+.status-planned {
+    color: #6c757d;
+}
+
+/* Навигация пагинации */
+.pagination .page-link {
+    border-radius: 0.25rem;
+    margin: 0 2px;
+}
+
+/* Поиск */
+.search-form .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Закладки */
+.bookmark-btn.active {
+    color: #ffc107;
+}
+
+.bookmark-btn.active i::before {
+    content: '\F19C'; /* bi-bookmark-fill */
+}
+
+/* Жалобы */
+.report-badge {
+    font-size: 0.75rem;
+}
+
+/* Dashboard статистика */
+.stat-card {
+    border-left: 4px solid;
+}
+
+.stat-card-primary {
+    border-left-color: #0d6efd;
+}
+
+.stat-card-success {
+    border-left-color: #198754;
+}
+
+.stat-card-warning {
+    border-left-color: #ffc107;
+}
+
+.stat-card-danger {
+    border-left-color: #dc3545;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .card-img-top {
+        height: 200px !important;
+    }
+    
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Темная тема (опционально) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bs-body-bg: #1a1a1a;
+        --bs-body-color: #f8f9fa;
+    }
+    
+    .card {
+        background-color: #2d2d2d;
+        border-color: #404040;
+    }
+    
+    .text-muted {
+        color: #adb5bd !important;
+    }
+}
